@@ -13,4 +13,11 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home')
+    ->middleware('auth');
+
+// GitHub OAuth routes
+Route::get('login/github', 'Auth\LoginController@redirectToProvider')
+    ->name('login');
+
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
