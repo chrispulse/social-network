@@ -22,3 +22,5 @@ Route::get('login/github', 'Auth\LoginController@redirectToProvider')
     ->name('login');
 
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('logout', 'Auth\LogoutController@logout')->name('logout');
